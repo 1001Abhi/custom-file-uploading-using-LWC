@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg" style="text-align:center;">
+        <lightning-input type="file" label="Attachment" onchange={openFileUpload}
+            accept={acceptedFormats} ></lightning-input>
+        <div class="slds-text-body_small slds-text-color_error">{filesName}</div>
+    </div>
+    <template if:true={loader}>
+        <div style="min-height:3rem;transform: translate(0, 0);">
+            <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+        </div>
+    </template>
+    <div style="text-align:center;">
+        <lightning-button variant="brand" label="Submit" title="Submit"
+            onclick={handleUpload}></lightning-button>
+    </div>
+</template>
